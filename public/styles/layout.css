@@ -27,7 +27,7 @@ body {
 
  main {
    background-color: #ffffff;
-   min-height: 50vw;
+   min-height: 100vh;
    margin: auto;
    padding-top: 140px;
    width: 450px;
