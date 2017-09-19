@@ -24,7 +24,12 @@
 }
 
 .new-tweet .counter {
+  color: #294953;
   float: right;
   font-style: italic;
   margin: 7px 7px 0;
+}
+
+.counter.invalid {
+  color: #ff0000;
 }
