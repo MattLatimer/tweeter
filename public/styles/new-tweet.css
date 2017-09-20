@@ -25,6 +25,7 @@
   margin: 7px 7px 0;
 }
 
+.error,
 .counter.invalid {
   color: #ff0000;
 }

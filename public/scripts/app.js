@@ -4,7 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Global Variables 
+//-----------------
+
+const charLimit = 140;
+
 $(function() {
+
+// Loading Tweets from Data
+//-------------------------
 
   function createTweetElement(tweet) {
     return $("<article>").addClass('tweet')
@@ -19,7 +27,7 @@ $(function() {
       .append($("<footer>")
         .append($("<div>").addClass("timestamp").text(tweet.created_at))
         .append($("<div>").addClass("actions")
-          .append($("<a>").attr("href", "#").text(unescape("\uf024")))
+          .append($("<a>").attr("href", "#").text("\uf024"))
           .append($("<a>").attr("href", "#").text("\uf079"))
           .append($("<a>").attr("href", "#").text("\uf004"))
         )
@@ -47,9 +55,20 @@ $(function() {
   }
   loadTweets();
 
+  // Submitting New Tweet
+  //---------------------
   $("form").on('submit', function(event) {
     event.preventDefault();
-    $.post('/tweets', $(this).serialize());
-    $("textarea").val("");
+    const message = $(this).serialize();
+    if (message.length <= 5) {
+      $(".error").text("Tweet can't be empty.");
+    } else if (message.length > 145) {
+      $(".error").text("Tweet is too long.");
+    } else {
+      $(".error").text("");
+      $.post("/tweets", $(this).serialize());
+      $("textarea").val("");
+      $(".counter").text(charLimit);
+    }
   });
 });
