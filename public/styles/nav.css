@@ -5,6 +5,8 @@
   padding: 0 2em;
   position: fixed;
   width: 100vw;
+  min-width: 450px;
+  z-index: 1;
 }
 
 #nav-bar .logo {
