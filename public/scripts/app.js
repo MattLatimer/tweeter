@@ -17,7 +17,7 @@ $(function() {
         "handle": "@SirIsaac"
       },
       "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
+        "text": "<script>alert('uh oh!');</script>"
       },
       "created_at": 1461116232227
     },
@@ -79,7 +79,6 @@ $(function() {
       $(".tweet-list").append(createTweetElement(tweet));
     });
   }
-
   renderTweets(data);
 
   $('.tweet').on('mouseenter', function() {
@@ -87,5 +86,11 @@ $(function() {
   });
   $('.tweet').on('mouseleave', function() {
     $(this).find('.actions').css('visibility', 'hidden');
+  });
+
+  $("form").on('submit', function(event) {
+    event.preventDefault();
+    $.post('/tweets', $(this).serialize());
+    $("textarea").val("");
   });
 });
