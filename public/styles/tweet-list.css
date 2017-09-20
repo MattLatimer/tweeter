@@ -1,3 +1,9 @@
+@font-face
+{
+font-family: fontAwesome;
+src: url('/fonts/fontawesome-webfont.ttf');
+}
+
 .tweet {
   border: 1px solid #cccccc;
   border-radius: 5px;
@@ -45,4 +51,17 @@
 
 .tweet .tweet-body {
   padding: 10px;
+}
+
+.tweet .actions {
+  font-family: fontAwesome;
+  display: flex;
+  visibility: hidden;
+}
+
+.tweet .actions a {
+  margin: 0 3px;
+  text-decoration: none;
+  color: #53bca9;
+  font-size: 120%;
 }
