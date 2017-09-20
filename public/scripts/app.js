@@ -45,7 +45,7 @@ $(function() {
 
   function renderTweets(tweets) {
     tweets.forEach(function (tweet){
-      $(".tweet-list").append(createTweetElement(tweet));
+      $(".tweet-list").prepend(createTweetElement(tweet));
     });
     setHoverListeners();
   }
@@ -62,13 +62,16 @@ $(function() {
     const message = $(this).serialize();
     if (message.length <= 5) {
       $(".error").text("Tweet can't be empty.");
-    } else if (message.length > 145) {
+    } else if (message.length > charLimit + 5) {
       $(".error").text("Tweet is too long.");
     } else {
       $(".error").text("");
-      $.post("/tweets", $(this).serialize());
       $("textarea").val("");
       $(".counter").text(charLimit);
+      $.post("/tweets", message, function() {
+        $("tweet-list").empty();
+        loadTweets();
+      });
     }
   });
 });
