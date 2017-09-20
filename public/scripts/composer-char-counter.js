@@ -1,10 +1,12 @@
-$(document).ready(function() {
+$(function() {
+
+  const charLimit = 140;
 
   $('.new-tweet').on('input', 'textarea', function(event) {
-    const counter = $(this).closest('.new-tweet').find('.counter');
-    const remain = 140 - this.value.length;
+    const counter = $(this).siblings('.counter');
+    const remain = charLimit - this.value.length;
     counter.text(remain);
-    (remain < 0) ? counter.addClass('invalid') : counter.removeClass('invalid');
+    counter.toggleClass('invalid', remain < 0);
   });
 
 });
