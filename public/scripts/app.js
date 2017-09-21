@@ -83,7 +83,7 @@ $(function() {
       $("textarea").val("");
       $(".counter").text(charLimit);
       $.post("/tweets", message, function() {
-        $("tweet-list").empty();
+        $(".tweet-list").empty();
         loadTweets();
       });
     }
