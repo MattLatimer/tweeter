@@ -14,10 +14,12 @@ moment().format();
 
 const charLimit = 140;
 
+// Wait for DOM Ready
+//-------------------
 $(function() {
 
-// Loading Tweets from Data
-//-------------------------
+  // Build Tweets List from Data
+  //-------------------------
 
   function createTweetElement(tweet) {
     return $("<article>").addClass('tweet')
@@ -60,9 +62,8 @@ $(function() {
   }
   loadTweets();
 
-
-  // Compose Button
-  //---------------
+  // Compose Button Action
+  //----------------------
   $(".compose").on('click', function() {
     $(".new-tweet").slideToggle(null, function(event) {
       $("textarea").focus();
