@@ -55,6 +55,15 @@ $(function() {
   }
   loadTweets();
 
+
+  // Compose Button
+  //---------------
+  $(".compose").on('click', function() {
+    $(".new-tweet").slideToggle(null, function(event) {
+      $("textarea").focus();
+    });
+  });
+
   // Submitting New Tweet
   //---------------------
   $("form").on('submit', function(event) {
