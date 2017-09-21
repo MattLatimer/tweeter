@@ -4,7 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Global Variables 
+// Global Setup
+//-------------
+
+moment().format();
+
+// Global Variables
 //-----------------
 
 const charLimit = 140;
@@ -25,7 +30,7 @@ $(function() {
       )
       .append($("<div>").addClass("tweet-body").append($("<p>").text(tweet.content.text)))
       .append($("<footer>")
-        .append($("<div>").addClass("timestamp").text(tweet.created_at))
+        .append($("<div>").addClass("timestamp").text(moment(tweet.created_at).fromNow()))
         .append($("<div>").addClass("actions")
           .append($("<a>").attr("href", "#").text("\uf024"))
           .append($("<a>").attr("href", "#").text("\uf079"))
