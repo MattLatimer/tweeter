@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-["Tellthe world what you're thinking."](https://github.com/MattLatimer/tweeter/blob/master/Screenshot.png)
+["Tell the world what you're thinking."](https://github.com/MattLatimer/tweeter/blob/master/Screenshot.png?raw=true)
 
 ## Getting Started
 
