@@ -20,12 +20,13 @@ const sass = require("node-sass-middleware");
 //-----------
 app.use(sass({
   src: "server/sass",
-  dest: "../public/styles",
-  debug: true
+  dest: "public/styles",
+  debug: true,
+  prefix: "/styles"
 })
 );
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use('/', express.static("public"));
 
 // Start Server
 //-------------
