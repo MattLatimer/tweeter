@@ -1,68 +1,62 @@
-@font-face
-{
-font-family: fontAwesome;
-src: url('/fonts/fontawesome-webfont.ttf');
-}
-
 .tweet {
   border: 1px solid #cccccc;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   margin: 0 0 .5em;
   overflow: hidden;
-}
 
-.tweet header{
-  background-color: #f3f3f3;
-  height: 70px;
-  padding: 10px;
-}
+  header{
+    background-color: #f3f3f3;
+    height: 70px;
+    padding: 10px;
+  }
 
-.tweet footer {
-  border-top: 1px solid #eeeeee;
-  display: flex;
-  justify-content: space-between;
-  font-size: 60%;
-  padding: 10px;
-}
+  footer {
+    border-top: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 60%;
+    padding: 10px;
+  }
 
-.tweet .avatar {
-  float: left;
-  width: 50px;
-  border-radius: 5px;
-}
+  .avatar {
+    float: left;
+    width: 50px;
+    border-radius: $borderRadius;
+  }
 
-.tweet .aliases {
-  color: #657e85;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-}
+  .aliases {
+    color: #657e85;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
 
-.tweet .name {
-  line-height: 1;
-  margin: 0 10px;
-}
+  .name {
+    line-height: 1;
+    margin: 0 10px;
+  }
 
-.tweet .handle {
-  line-height: 2;
-  color: #a0a0a0;
-  font-size: 80%;
-  margin: 0;
-}
+  .handle {
+    line-height: 2;
+    color: #a0a0a0;
+    font-size: 80%;
+    margin: 0;
+  }
 
-.tweet .tweet-body {
-  padding: 10px;
-}
+  .tweet-body {
+    padding: 10px;
+  }
 
-.tweet .actions {
-  font-family: fontAwesome;
-  display: flex;
-  visibility: hidden;
-}
+  .actions {
+    font-family: fontAwesome;
+    display: flex;
+    visibility: hidden;
+  }
 
-.tweet .actions a {
-  margin: 0 3px;
-  text-decoration: none;
-  color: #53bca9;
-  font-size: 120%;
+  .actions a {
+    margin: 0 3px;
+    text-decoration: none;
+    color: #53bca9;
+    font-size: 120%;
+  }
 }
